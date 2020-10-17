@@ -30,6 +30,14 @@ namespace ProyectosSoft.CapaDominio.Entidades
             this.trabajador = trabajador;
         }*/
 
+        public ContratoTrabajador(double sueldo, String cargo)
+        {
+            this.sueldo = sueldo;
+            this.cargo = cargo;
+        }
+
+        public ContratoTrabajador() { }
+
         public double Sueldo { get => sueldo; set => sueldo = value; }
         public string Cargo { get => cargo; set => cargo = value; }
         public string FondoPension { get => fondoPension; set => fondoPension = value; }

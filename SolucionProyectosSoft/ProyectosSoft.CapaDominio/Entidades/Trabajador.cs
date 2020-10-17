@@ -16,7 +16,6 @@ namespace ProyectosSoft.CapaDominio.Entidades
         private String direccion;
         private String telefono;
         private String estadoCivil;
-        private String cargo;
         private int añosExperiencia;
         private List<ContratoTrabajador> contratos;
         public int idTrabajador { get; set; }
@@ -37,6 +36,8 @@ namespace ProyectosSoft.CapaDominio.Entidades
            
         }*/
 
+        public Trabajador() { }
+
         public string Dni { get => dni; set => dni = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string AplellidoPaterno { get => aplellidoPaterno; set => aplellidoPaterno = value; }
@@ -46,11 +47,10 @@ namespace ProyectosSoft.CapaDominio.Entidades
         public string Telefono { get => telefono; set => telefono = value; }
         public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
         public int AñosExperiencia { get => añosExperiencia; set => añosExperiencia = value; }
-        public string Cargo { get => cargo; set => cargo = value; }
 
         internal List<ContratoTrabajador> Contratos { get => contratos; set => contratos = value; }
 
-        public Boolean esCargoValido()
+        /*public Boolean esCargoValido()
         {
             if (this.cargo == "PEON")
             {
@@ -61,7 +61,7 @@ namespace ProyectosSoft.CapaDominio.Entidades
                 return true;
             }
             return false;
-        }
+        }*/
         public int calcularEdad()
         {
             DateTime thisDay = DateTime.Today;

@@ -64,12 +64,12 @@ namespace ProyectosSoft.CapaDominio.Entidades
         public int CantidadPeones { get => cantidadPeones; set => cantidadPeones = value; }
         public double PresupuestoProfesionales { get => presupuestoProfesionales; set => presupuestoProfesionales = value; }
         public double PresupuestoPeones { get => presupuestoPeones; set => presupuestoPeones = value; }
-        internal List<ContratoTrabajador> Trabajadores { get => trabajadores; set => trabajadores = value; }
-        internal List<Material> Materiales { get => materiales; set => materiales = value; }
+        public List<ContratoTrabajador> Trabajadores { get => trabajadores; set => trabajadores = value; }
+        public List<Material> Materiales { get => materiales; set => materiales = value; }
 
         public Boolean esPresupuestoGeneralValido()
         {
-            if (this.presupuestoGeneral <= 10000 || this.presupuestoGeneral < calcularPresupuestoGeneral())
+            if (this.presupuestoGeneral <= 15000 && this.presupuestoGeneral < calcularPresupuestoGeneral())
             {
                 return false;
             }
@@ -128,7 +128,7 @@ namespace ProyectosSoft.CapaDominio.Entidades
         public double calcularPresupuestoProfesionales()
         {
             double presupuestoCalculado = 0.0;
-            foreach (ContratoTrabajador trabajador in trabajadores)
+            foreach (ContratoTrabajador trabajador in this.trabajadores)
             {
                 if (trabajador.Cargo.Equals("PROFESIONAL"))
                 {
@@ -141,7 +141,7 @@ namespace ProyectosSoft.CapaDominio.Entidades
         public double calcularPresupuestoPeones()
         {
             double presupuestoCalculado = 0.0;
-            foreach (ContratoTrabajador trabajador in trabajadores)
+            foreach (ContratoTrabajador trabajador in this.trabajadores)
             {
                 if (trabajador.Cargo.Equals("PEON"))
                 {
