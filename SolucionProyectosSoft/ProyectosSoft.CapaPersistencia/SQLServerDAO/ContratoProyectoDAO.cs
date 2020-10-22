@@ -22,7 +22,6 @@ namespace ProyectosSoft.CapaPersistencia.SQLServerDAO
         {
 
             string consultaSQL = "insert into ContratoProyecto ( nombre, zonaDeConstruccion, presupuestoGeneral, presupuestoMaterial, presupuestoProfesionales, presupuestoPeones, mesesProyecto, cantidadProfesionales, cantidadPeones) " +
-                                 //" values( ' @nombre ','@zona_construccion', @presupuesto_general, @presupuesto_material, @presupuesto_profesionales, @presupuesto_peones, @meses_proyecto, @cantidad_profesionales, @cantidad_peones) ";
                                  " values( '" + contratoProyecto.Nombre + "','" + contratoProyecto.ZonaConstruccion + "', @presupuesto_general, @presupuesto_material, @presupuesto_profesionales, @presupuesto_peones, @meses_proyecto, @cantidad_profesionales, @cantidad_peones) ";
 
             try
@@ -30,8 +29,6 @@ namespace ProyectosSoft.CapaPersistencia.SQLServerDAO
                 SqlCommand comando;
                 //Guardar la Proyecto
                 comando = gestorSQL.ObtenerComandoSQL(consultaSQL);
-                //comando.Parameters.AddWithValue("@nombre", contratoProyecto.Nombre);
-                //comando.Parameters.AddWithValue("@zona_construccion", contratoProyecto.ZonaConstruccion);
                 comando.Parameters.AddWithValue("@presupuesto_general", contratoProyecto.PresupuestoGeneral);
                 comando.Parameters.AddWithValue("@presupuesto_material", contratoProyecto.PresupuestoMaterial);
                 comando.Parameters.AddWithValue("@presupuesto_profesionales", contratoProyecto.PresupuestoProfesionales);
@@ -53,6 +50,6 @@ namespace ProyectosSoft.CapaPersistencia.SQLServerDAO
             return null;
         }
 
-   
+
     }
 }

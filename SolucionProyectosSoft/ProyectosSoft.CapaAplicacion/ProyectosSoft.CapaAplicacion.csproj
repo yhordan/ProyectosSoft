@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\RegistrarProyectoServicio.cs" />
-    <Compile Include="Servicios\RegistrarTrabajador.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProyectosSoft.CapaDominio\ProyectosSoft.CapaDominio.csproj">
